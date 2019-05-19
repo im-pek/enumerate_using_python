@@ -1,0 +1,11 @@
+with open("WebChatTranscripts Mar 2017.txt") as file:  
+    data = file.read()
+    lowercasedata=data.lower()
+    differentchats=lowercasedata.split("start : ")
+    
+    text_file = open('Labelled WebChatTranscripts Mar 2017.txt', 'w')
+    
+    for idx, each_chat in enumerate(differentchats, start=1):
+        text_file.write('[CHAT NUMBER %s] %s' % (idx, each_chat))
+        
+    text_file.close()
